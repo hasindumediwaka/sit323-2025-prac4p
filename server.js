@@ -55,6 +55,31 @@ app.get('/divide', (req, res) => {
   }
 });
 
+app.get('/exponentiate', (req, res) => {
+  const base = parseFloat(req.query.base);
+  const exponent = parseFloat(req.query.exponent);
+
+  if (isNaN(base) || isNaN(exponent)) {
+    return res.status(400).json({ error: 'Invalid input for base or exponent' });
+  }
+
+  const result = Math.pow(base, exponent);
+  res.json({ result });
+});
+
+app.get('/modulo', (req, res) => {
+  const dividend = parseFloat(req.query.dividend);
+  const divisor = parseFloat(req.query.divisor);
+
+  if (isNaN(dividend) || isNaN(divisor)) {
+    return res.status(400).json({ error: 'Invalid input for dividend or divisor' });
+  }
+
+  const result = dividend % divisor;
+  res.json({ result });
+});
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Calculator microservice running at http://localhost:${port}`);
