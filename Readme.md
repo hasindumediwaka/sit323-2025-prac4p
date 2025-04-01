@@ -27,7 +27,7 @@ The service also includes enhanced error handling to ensure reliable and informa
 - `number` (required): The number to find the square root of.
 - **Example**:  http://localhost:3000/sqrt?number=16
 
--##### Modulo
+##### Modulo
 - **Endpoint**: /modulo
 - **Method**: GET
 - **Query Parameters**:
@@ -35,3 +35,12 @@ The service also includes enhanced error handling to ensure reliable and informa
 - `divisor` (required): The divisor (denominator).
 - **Example**:  
 http://localhost:3000/modulo?dividend=10&divisor=3
+
+### 3. Handle Errors
+- *Negative Square Root Handling*:  
+```json
+{
+  "error": "Cannot compute square root of a negative number"
+}
+
+
