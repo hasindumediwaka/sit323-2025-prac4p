@@ -17,7 +17,7 @@ The service also includes enhanced error handling to ensure reliable and informa
 - **Query Parameters**:
   - `base` (required): The base number.
   - `exponent` (required): The exponent number.
-- **Example**:  
+- **Example**:  http://localhost:3000/exponentiate?base=2&exponent=3
 
 
 ##### Square Root
@@ -25,4 +25,13 @@ The service also includes enhanced error handling to ensure reliable and informa
 - **Method**: `GET`
 - **Query Parameters**:
 - `number` (required): The number to find the square root of.
+- **Example**:  http://localhost:3000/sqrt?number=16
+
+-##### Modulo
+- **Endpoint**: /modulo
+- **Method**: GET
+- **Query Parameters**:
+- `dividend` (required): The dividend (numerator).
+- `divisor` (required): The divisor (denominator).
 - **Example**:  
+http://localhost:3000/modulo?dividend=10&divisor=3
