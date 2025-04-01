@@ -79,6 +79,21 @@ app.get('/modulo', (req, res) => {
   res.json({ result });
 });
 
+app.get('/sqrt', (req, res) => {
+  const number = parseFloat(req.query.number);
+
+  if (isNaN(number)) {
+    return res.status(400).json({ error: 'Invalid input for number' });
+  }
+
+  if (number < 0) {
+    return res.status(400).json({ error: 'Cannot compute square root of a negative number' });
+  }
+
+  const result = Math.sqrt(number);
+  res.json({ result });
+});
+
 
 // Start the server
 app.listen(port, () => {
